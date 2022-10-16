@@ -1,3 +1,4 @@
+#include <frc_robot_utilities/frc_robot_utilities.hpp>
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 
@@ -5,26 +6,14 @@
 #include <string>
 #include <mutex>
 
-ros::NodeHandle* node;
+BufferedROSMsgHandler<hmi_agent_node::HMI_Signals> hmi_updates;
+BufferedROSMsgHandler<rio_control_node::Robot_Status> robot_updates;
+BufferedROSMsgHandler<rio_control_node::Motor_Status> motor_updates_internal;
+MotorStatusHelper motor_updates(motor_updates_internal);
 
-int main(int argc, char **argv)
+void register_for_robot_updates(ros::NodeHandle* node)
 {
-	/**
-	 * The ros::init() function needs to see argc and argv so that it can perform
-	 * any ROS arguments and name remapping that were provided at the command line.
-	 * For programmatic remappings you can use a different version of init() which takes
-	 * remappings directly, but for most command-line programs, passing argc and argv is
-	 * the easiest way to do it.  The third argument to init() is the name of the node.
-	 *
-	 * You must call one of the versions of ros::init() before using any other
-	 * part of the ROS system.
-	 */
-	ros::init(argc, argv, "frc_robot_utilities_node");
-
-	ros::NodeHandle n;
-
-	node = &n;
-
-	ros::spin();
-	return 0;
+	hmi_updates.register_for_updates(node, "/HMISignals");
+	robot_updates.register_for_updates(node, "/RobotStatus");
+	motor_updates_internal.register_for_updates(node, "/MotorStatus");
 }
