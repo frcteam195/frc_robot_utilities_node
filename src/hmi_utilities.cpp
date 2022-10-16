@@ -1,5 +1,5 @@
 #include "ros/ros.h"
-#include "hmi_utilities/hmi_utilities.hpp"
+#include "frc_robot_utilities/hmi_utilities.hpp"
 #include <mutex>
 #include <atomic>
 
