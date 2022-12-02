@@ -36,7 +36,7 @@ public:
     {
             ros::Subscriber subscriber = node->subscribe(topic, queue_size, &BufferedROSMsgHandler<T>::update_func, this, ros::TransportHints().tcpNoDelay());
     };
-
+    
     /**
      * @brief Get the latest message data
      * @return The latest ROS msg data that this instance is subscribed to
