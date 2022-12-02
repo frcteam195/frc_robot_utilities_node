@@ -34,7 +34,7 @@ public:
     */
     void register_for_updates(ros::NodeHandle* node, std::string topic, int queue_size = 1)
     {
-            ros::Subscriber subscriber = node->subscribe(topic, queue_size, &BufferedROSMsgHandler<T>::update_func, this, ros::TransportHints().tcpNoDelay());
+        ros::Subscriber subscriber = node->subscribe(topic, queue_size, &BufferedROSMsgHandler<T>::update_func, this, ros::TransportHints().tcpNoDelay());
     };
     
     /**
