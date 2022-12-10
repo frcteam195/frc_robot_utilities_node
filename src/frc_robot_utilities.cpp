@@ -6,7 +6,7 @@
 #include <string>
 #include <mutex>
 
-BufferedROSMsgHandler<hmi_agent_node::HMI_Signals> hmi_updates;
+BufferedROSMsgHandler<ck_ros_msgs_node::HMI_Signals> hmi_updates;
 BufferedROSMsgHandler<rio_control_node::Robot_Status> robot_updates_internal;
 RobotStatusHelper robot_status(robot_updates_internal);
 BufferedROSMsgHandler<rio_control_node::Motor_Status> motor_updates_internal;

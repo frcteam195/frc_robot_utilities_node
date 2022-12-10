@@ -5,12 +5,12 @@
 #include <frc_robot_utilities/RobotStatusHelper.hpp>
 
 
-#include <hmi_agent_node/HMI_Signals.h>
+#include <ck_ros_msgs_node/HMI_Signals.h>
 #include <rio_control_node/Motor_Status.h>
 #include <rio_control_node/Robot_Status.h>
 
 
-extern BufferedROSMsgHandler<hmi_agent_node::HMI_Signals> hmi_updates;
+extern BufferedROSMsgHandler<ck_ros_msgs_node::HMI_Signals> hmi_updates;
 extern RobotStatusHelper robot_status;
 extern MotorStatusHelper motor_updates;
 
