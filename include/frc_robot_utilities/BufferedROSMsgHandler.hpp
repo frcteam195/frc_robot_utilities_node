@@ -12,6 +12,7 @@ private:
     T msg_buf;
     std::recursive_mutex msg_lock;
     std::atomic_bool update_occurred {false};
+    ros::Subscriber subscriber;
 
     void update_func(const T& callback_msg)
     {
@@ -34,7 +35,7 @@ public:
     */
     void register_for_updates(ros::NodeHandle* node, std::string topic, int queue_size = 1)
     {
-        ros::Subscriber subscriber = node->subscribe(topic, queue_size, &BufferedROSMsgHandler<T>::update_func, this, ros::TransportHints().tcpNoDelay());
+        subscriber = node->subscribe(topic, queue_size, &BufferedROSMsgHandler<T>::update_func, this, ros::TransportHints().tcpNoDelay());
     };
     
     /**
