@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 project(${PROJECT_NAME})
 
 find_package(catkin REQUIRED COMPONENTS
-  roscpp ck_ros_msgs_node rio_control_node std_msgs
+  roscpp ck_ros_msgs_node ck_ros_base_msgs_node std_msgs
 )
 
 # add_message_files(
@@ -25,7 +25,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES ${LIBRARY_NAME}
-  CATKIN_DEPENDS roscpp ck_ros_msgs_node rio_control_node std_msgs
+  CATKIN_DEPENDS roscpp ck_ros_msgs_node ck_ros_base_msgs_node std_msgs
 )
 
 include_directories(

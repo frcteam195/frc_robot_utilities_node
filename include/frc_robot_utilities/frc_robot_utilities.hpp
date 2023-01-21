@@ -6,8 +6,8 @@
 
 
 #include <ck_ros_msgs_node/HMI_Signals.h>
-#include <rio_control_node/Motor_Status.h>
-#include <rio_control_node/Robot_Status.h>
+#include <ck_ros_base_msgs_node/Motor_Status.h>
+#include <ck_ros_base_msgs_node/Robot_Status.h>
 
 
 extern BufferedROSMsgHandler<ck_ros_msgs_node::HMI_Signals> hmi_updates;

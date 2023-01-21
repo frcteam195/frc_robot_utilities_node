@@ -1,6 +1,6 @@
 #pragma once
 #include "frc_robot_utilities/BufferedROSMsgHandler.hpp"
-#include "rio_control_node/Robot_Status.h"
+#include "ck_ros_base_msgs_node/Robot_Status.h"
 #include <map>
 #include <mutex>
 #include <string>
@@ -23,7 +23,7 @@ enum class RobotMode : int
 class RobotStatusHelper
 {
 public:
-    RobotStatusHelper(BufferedROSMsgHandler<rio_control_node::Robot_Status>& buffered_msg_obj);
+    RobotStatusHelper(BufferedROSMsgHandler<ck_ros_base_msgs_node::Robot_Status>& buffered_msg_obj);
 
     RobotMode get_mode();
     Alliance get_alliance();
@@ -32,7 +32,7 @@ public:
     int get_selected_auto();
 
 private:
-    BufferedROSMsgHandler<rio_control_node::Robot_Status>* buf_handler_ptr = NULL;
+    BufferedROSMsgHandler<ck_ros_base_msgs_node::Robot_Status>* buf_handler_ptr = NULL;
     std::recursive_mutex robot_lock;
 
     void update();

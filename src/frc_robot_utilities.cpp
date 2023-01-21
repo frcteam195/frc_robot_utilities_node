@@ -7,9 +7,9 @@
 #include <mutex>
 
 BufferedROSMsgHandler<ck_ros_msgs_node::HMI_Signals> hmi_updates;
-BufferedROSMsgHandler<rio_control_node::Robot_Status> robot_updates_internal;
+BufferedROSMsgHandler<ck_ros_base_msgs_node::Robot_Status> robot_updates_internal;
 RobotStatusHelper robot_status(robot_updates_internal);
-BufferedROSMsgHandler<rio_control_node::Motor_Status> motor_updates_internal;
+BufferedROSMsgHandler<ck_ros_base_msgs_node::Motor_Status> motor_updates_internal;
 MotorStatusHelper motor_updates(motor_updates_internal);
 
 void register_for_robot_updates(ros::NodeHandle* node)

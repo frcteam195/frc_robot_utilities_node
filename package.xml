@@ -38,11 +38,11 @@
   <!--   <exec_depend>roscpp</exec_depend> -->
   <!-- Use build_depend for packages you need at compile time: -->
     <build_depend>ck_ros_msgs_node</build_depend>
-    <build_depend>rio_control_node</build_depend>
+    <build_depend>ck_ros_base_msgs_node</build_depend>
     <build_depend>std_msgs</build_depend>
   <!-- Use build_export_depend for packages you need in order to build against this package: -->
     <build_export_depend>ck_ros_msgs_node</build_export_depend>
-    <build_export_depend>rio_control_node</build_export_depend>
+    <build_export_depend>ck_ros_base_msgs_node</build_export_depend>
     <build_export_depend>std_msgs</build_export_depend>
   <!-- Use buildtool_depend for build tool packages: -->
   <!--   <buildtool_depend>catkin</buildtool_depend> -->
@@ -54,7 +54,7 @@
   <!--   <doc_depend>doxygen</doc_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
   <test_depend>rosunit</test_depend>
-  
+
   <!-- The export tag contains other, unspecified, tags -->
   <export>
     <!-- Other tools can request additional information be placed here -->

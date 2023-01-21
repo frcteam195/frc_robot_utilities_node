@@ -1,6 +1,6 @@
 #include "frc_robot_utilities/RobotStatusHelper.hpp"
 
-RobotStatusHelper::RobotStatusHelper(BufferedROSMsgHandler<rio_control_node::Robot_Status>& buffered_msg_obj)
+RobotStatusHelper::RobotStatusHelper(BufferedROSMsgHandler<ck_ros_base_msgs_node::Robot_Status>& buffered_msg_obj)
 {
     buf_handler_ptr = &buffered_msg_obj;
 }
@@ -10,7 +10,7 @@ void RobotStatusHelper::update()
     if (buf_handler_ptr->has_updated())
     {
         std::lock_guard<std::recursive_mutex> lock(robot_lock);
-        const rio_control_node::Robot_Status& r_stat = buf_handler_ptr->get();
+        const ck_ros_base_msgs_node::Robot_Status& r_stat = buf_handler_ptr->get();
         robot_state = (RobotMode) r_stat.robot_state;
         alliance = (Alliance) r_stat.alliance;
         match_time = r_stat.match_time;
