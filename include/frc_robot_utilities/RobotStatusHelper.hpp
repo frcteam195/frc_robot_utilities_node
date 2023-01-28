@@ -30,6 +30,7 @@ public:
     double get_match_time();
     std::string get_game_data();
     int get_selected_auto();
+    bool is_connected();
 
 private:
     BufferedROSMsgHandler<ck_ros_base_msgs_node::Robot_Status>* buf_handler_ptr = NULL;
@@ -42,4 +43,5 @@ private:
     double match_time = 0;
     std::string game_data = "";
     int selected_auto = 0;
+    bool m_is_connected = false;
 };

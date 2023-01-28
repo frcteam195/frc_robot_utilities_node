@@ -16,6 +16,7 @@ void RobotStatusHelper::update()
         match_time = r_stat.match_time;
         game_data = r_stat.game_data;
         selected_auto = r_stat.selected_auto;
+        m_is_connected = r_stat.is_connected;
     }
 }
 
@@ -47,4 +48,10 @@ int RobotStatusHelper::get_selected_auto()
 {
     update();
     return selected_auto;
+}
+
+bool RobotStatusHelper::is_connected()
+{
+    update();
+    return m_is_connected;
 }
